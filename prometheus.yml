@@ -11,7 +11,7 @@ global:
 scrape_configs:
   
       
-  - job_name:       'mc console'
+  - job_name:       'console'
 
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
@@ -19,46 +19,12 @@ scrape_configs:
     metrics_path: /rest/prometheus
     
     params: 
-        TENANTID: [999999999]
+        TID: [999999999]
     
-    bearer_token: OmDoU3AMPENuMZsQWC6PYhG2S2VoHUOt6cegbAdxOFALzm_DtDJkSeUFSlmssmx6mDB1150l1Is8J_vSOPBRmbFx3tEyftsWhab_hCxo0_jLr4KbZPmroUDfbXeZ-KfVWDZMBoJbKuNz098jlAs0mVc1o7FZ1v7xBryKh45qSTtFC3ljhevgn9HZfJmNbC7hD81clevxjh64UVDQIblhEt97TRDFDDS174m7zrSPgJYeqo7zNhZu2qOyqyHFbihvyr1apZPhREV4TpusTQPGqWkE6QRAl6L2B0fPqt-5FJaiVcpGPz3kkxwl321KID_aCdAez9tOIe4RUBNC67QYGIc-wCwCTBOKFOgxZaQ7kb5rVTaZmc82s-An6bwAWzxkMPlI9FBVjQE7VMbSVuFYbOCa0XJM-femig59tUCH4LaRWG8nIKKF1L8FW7xH3wP3DhuQokZygEZVlDH3RR2ZXA..
+    bearer_token: OmDoU3AMPENuMZ
 
     static_configs:
-      - targets: ['console-service:8080']
+      - targets: ['console:8080']
         labels:
           group: 'production'
           
-  - job_name:       'mc security'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
-    
-    metrics_path: /security/rest/prometheus
-    
-    params: 
-        TENANTID: [999999999]
-    
-    bearer_token: OmDoU3AMPENuMZsQWC6PYhG2S2VoHUOt6cegbAdxOFALzm_DtDJkSeUFSlmssmx6mDB1150l1Is8J_vSOPBRmbFx3tEyftsWhab_hCxo0_jLr4KbZPmroUDfbXeZ-KfVWDZMBoJbKuNz098jlAs0mVc1o7FZ1v7xBryKh45qSTtFC3ljhevgn9HZfJmNbC7hD81clevxjh64UVDQIblhEt97TRDFDDS174m7zrSPgJYeqo7zNhZu2qOyqyHFbihvyr1apZPhREV4TpusTQPGqWkE6QRAl6L2B0fPqt-5FJaiVcpGPz3kkxwl321KID_aCdAez9tOIe4RUBNC67QYGIc-wCwCTBOKFOgxZaQ7kb5rVTaZmc82s-An6bwAWzxkMPlI9FBVjQE7VMbSVuFYbOCa0XJM-femig59tUCH4LaRWG8nIKKF1L8FW7xH3wP3DhuQokZygEZVlDH3RR2ZXA..
-
-    static_configs:
-      - targets: ['security-service:8080']
-        labels:
-          group: 'production'
-          
-          
-  - job_name:       'mc instrumentation'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
-    
-    metrics_path: /instrumentation/rest/prometheus
-    
-    params: 
-        TENANTID: [999999999]
-    
-    bearer_token: OmDoU3AMPENuMZsQWC6PYhG2S2VoHUOt6cegbAdxOFALzm_DtDJkSeUFSlmssmx6mDB1150l1Is8J_vSOPBRmbFx3tEyftsWhab_hCxo0_jLr4KbZPmroUDfbXeZ-KfVWDZMBoJbKuNz098jlAs0mVc1o7FZ1v7xBryKh45qSTtFC3ljhevgn9HZfJmNbC7hD81clevxjh64UVDQIblhEt97TRDFDDS174m7zrSPgJYeqo7zNhZu2qOyqyHFbihvyr1apZPhREV4TpusTQPGqWkE6QRAl6L2B0fPqt-5FJaiVcpGPz3kkxwl321KID_aCdAez9tOIe4RUBNC67QYGIc-wCwCTBOKFOgxZaQ7kb5rVTaZmc82s-An6bwAWzxkMPlI9FBVjQE7VMbSVuFYbOCa0XJM-femig59tUCH4LaRWG8nIKKF1L8FW7xH3wP3DhuQokZygEZVlDH3RR2ZXA..
-
-    static_configs:
-      - targets: ['instrumentation-service:8080']
-        labels:
-          group: 'production'

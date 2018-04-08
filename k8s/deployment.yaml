@@ -6,14 +6,8 @@ spec:
   replicas: 1
   template:
     metadata:
-      annotations:
-        build_version: "00000"
-        git_commit: "00000"
-        branch_name: "prometheus"
-        git_repo: prometheus
       labels:
         app: prometheus
-        product: mc
     spec:
       volumes:
       - name: prometheus-config-volume
